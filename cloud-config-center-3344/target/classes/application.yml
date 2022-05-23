@@ -1,0 +1,20 @@
+server:
+  port: 3344
+
+spring:
+  application:
+    name: cloud-config-center
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/viyenhub/Springcloud-Config.git #git@github.com:viyenhub/Springcloud-Config.git
+          timeout: 10
+          search-paths:
+            - Springcloud-Config
+      label: master
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
